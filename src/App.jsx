@@ -5,14 +5,11 @@ import Dashboard from "./pages/DashBoard";
 import Sidebar from "./compnents/SideBar";
 import { useDispatch, useSelector } from "react-redux";
 import SignIn from "./pages/LogIn";
+import CarsPage from "./pages/CarsPage";
 
 function App() {
 
   const token = useSelector((state) => state.auth.token);
-  // const token = localStorage.getItem("token");
-// hello mayar
-// you wellcome hammody
-// what are you doing ??
 
   return (
     <>
@@ -22,6 +19,7 @@ function App() {
           <Route path="/" element={token ? <HomePage /> : <SignIn />} />
           {/* <Route path="login" element={<SignIn />} /> */}
           <Route path="/admin" element={token ? <Dashboard /> : <SignIn />} />
+          <Route path="/cars" element={token ? <CarsPage /> : <SignIn />} />
         </Routes>
       </div>
     </>
